@@ -35,7 +35,7 @@ publishing {
             groupId 'com.example.mathlibrary'
             artifactId 'mathlibrary'
             version '1.0.0'
-            artifact("$buildDir/outputs/aar/mathlibrary-release.aar")
+            artifact("$buildDir/outputs/aar/MathLibrary-release.aar")
         }
     }
     repositories {
