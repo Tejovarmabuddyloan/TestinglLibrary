@@ -44,7 +44,7 @@ publishing {
         url uri("https://maven.pkg.github.com/Tejovarmabuddyloan/MathLibrary")
         credentials {
             username = "Tejovarmabuddyloan"
-            password = "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"
+            password = "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"
         }
     }
 }
