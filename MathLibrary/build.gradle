@@ -38,24 +38,34 @@ publishing {
             artifact("$buildDir/outputs/aar/MathLibrary-release.aar")
         }
     }
-    repositories {
-        maven {
-        name "GitHubPackages"
-        url uri("https://maven.pkg.github.com/Tejovarmabuddyloan/MathLibrary")
-        credentials {
-            username = "Tejovarmabuddyloan"
-            password = "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"
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId 'com.example.mathlibrary'
+                artifactId 'mathlibrary'
+                version '1.0.0'
+                artifact("$buildDir/outputs/aar/MathLibrary-release.aar")
+            }
+        }
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/Tejovarmabuddyloan/MathLibrary")
+                credentials {
+                    username = project.findProperty("gpr.user")
+                    password = project.findProperty("gpr.key")
+                }
+            }
         }
     }
 }
-}
 
-dependencies {
+    dependencies {
 
-    implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-}
+        implementation 'androidx.core:core-ktx:1.12.0'
+        implementation 'androidx.appcompat:appcompat:1.6.1'
+        implementation 'com.google.android.material:material:1.10.0'
+        testImplementation 'junit:junit:4.13.2'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    }
